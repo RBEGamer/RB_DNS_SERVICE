@@ -13,16 +13,6 @@ A simple http based "DYNDNS"-Service for the cage light
 
 
 
-# CLIENT
-
-## INSTALLATION
-
-
-## CONFIGURATION
-
-
-## USAGE
-
 
 
 # TODO
