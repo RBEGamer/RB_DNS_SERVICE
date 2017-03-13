@@ -25,7 +25,9 @@ So, your RB_DNS_SERVER is ready to use, all needed configurations are done.
 Now you can run the client on you iot devices to register a device.
 
 
-
+# IMAGES
+## WEB INTERFACE V1
+![Gopher image](/documentation/images/webui_v1.png)
 
 
 # TODO
