@@ -31,7 +31,7 @@ $db_username, $db_password)or die ("keine Verbindung möglich. Benutzername oder
 mysql_select_db($db_name)or die ("Die Datenbank existiert nicht.");
 
 
-if(isset($_GET['uuid']) && isset($_GET['type']) && isset($_GET['pass']) && isset($_GET['device_name']) && isset($_GET['port'])){
+if(isset($_GET['uuid']) && $_GET['uuid'] != "" && isset($_GET['type'])&& $_GET['type'] != "" && isset($_GET['pass']) && $_GET['pass'] != "" && isset($_GET['device_name']) && $_GET['device_name'] != "" && isset($_GET['port']) && $_GET['port'] != ""){
 echo "param ok<br>";
 //count rows
 $client_ip = get_client_ip();
@@ -69,6 +69,6 @@ echo "change_uuid";
 
 
 }else{
-echo "missing_params";
+echo "missing_or_empty_params";
 }
 ?>
