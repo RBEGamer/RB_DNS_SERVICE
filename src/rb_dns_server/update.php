@@ -32,7 +32,18 @@ mysql_select_db($db_name)or die ("Die Datenbank existiert nicht.");
 
 
 if(isset($_GET['uuid']) && isset($_GET['type']) && isset($_GET['pass']) && isset($_GET['device_name']) && isset($_GET['port'])){
-echo "param ok<br>";
+
+if($_GET['uuid'] == "00000000-0000-0000-0000-000000000000"){
+echo "change_uuid";
+exit();
+}
+if(!isset($_GET['debug']) && $_GET['uuid'] == "00000000-1234-1234-1234-000000000000"){
+echo "change_uuid";
+exit();
+}
+
+
+//echo "param_ok";
 //count rows
 $client_ip = get_client_ip();
 $row_counter = 0;
@@ -40,7 +51,7 @@ $row_counter = 0;
 while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
 $row_counter++;
 }
-echo "uuidc" .$row_counter ."<br>";
+//echo "uuidc" .$row_counter ."<br>";
 
 
 //if == 1 update
@@ -52,7 +63,7 @@ echo "insert_ok";
 }else if($row_counter == 1){
 
 //CHECK PW
-$pw_check = mysql_query("SELECT* FROM `ip_lookup` WHERE `device_pw`='".$_GET['pass']."' AND `uuid`='".$_GET['uuid']."'");
+$pw_check = mysql_query("SELECT* FROM `ip_lookup` WHERE `device_pw`='".$_GET['pass']."' AND `uuid`='".$_GET['uuid']."' AND `ip` != '".$client_ip."'");
 
 if(mysql_fetch_array($pw_check) !== false){
 $insert_data = mysql_query("UPDATE `ip_lookup` SET `dest_ip_v4`='".$client_ip."',`dest_ip_port`='".$_GET['port']."',`device_name`='".$_GET['device_name']."',`device_pw`='".$_GET['pass']."' WHERE `uuid`='".$_GET['uuid']."' AND `device_pw`='".$_GET['pass']."'");
