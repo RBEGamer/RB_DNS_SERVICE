@@ -34,7 +34,7 @@ Now you can run the client on you iot devices to register a device.
 
 ## SERVER TODO
 * add nickname support
-
+* add bind9 zone file generator from sql
 ## CLIENT TODO
 * add go client
 * add arduino esp client
