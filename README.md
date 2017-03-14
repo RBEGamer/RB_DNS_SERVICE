@@ -26,8 +26,8 @@ Now you can run the client on you iot devices to register a device.
 
 
 # IMAGES
-## WEB INTERFACE V1
-![Gopher image](/documentation/images/webui_v1.png)
+## WEB INTERFACE V0.2
+![Gopher image](/documentation/images/webui_v2.png)
 
 
 # TODO
