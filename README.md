@@ -6,11 +6,11 @@ So its a simple alternative to a real dyndns service.
 
 # SERVER SETUP
 
-## BASIC SETUP
-* install a mysql server [apt-get install mysql-server mysql-client] 
-* install a webserver like Apache [apt-get install apache2]
-* install php (>= 5)[apt-get install php5 libapache2-mod-php5]
-* restart the webserver [/etc/init.d/apache2 restart]
+## BASIC SETU
+* install a mysql server [`apt-get install mysql-server mysql-client`] 
+* install a webserver like Apache [`apt-get install apache2`]
+* install php (>= 5)[`apt-get install php5 libapache2-mod-php5`]
+* restart the webserver [`/etc/init.d/apache2 restart`]
 
 ## SETUP THE MYSQL DATABASE
 To setup the database you need to create some tables.

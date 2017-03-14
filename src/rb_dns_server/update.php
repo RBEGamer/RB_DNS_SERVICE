@@ -80,6 +80,6 @@ echo "change_uuid";
 
 
 }else{
-echo "missing_params";
+echo "missing_or_empty_params";
 }
 ?>
