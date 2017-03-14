@@ -15,7 +15,7 @@ So its a simple alternative to a real dyndns service.
 ## SETUP THE MYSQL DATABASE
 To setup the database you need to create some tables.
 I have added a sql dump for easy install!
-Please run in a mysql promt the `/src/rb_dns_server/sql_dump/rbdns_v1.sql`
+Please run in a mysql promt the `/src/rb_dns_server/sql_dump/`
 
 ## SETUP THE DATABASE CONFIGURATION
 To setup your database login information, please open the `/src/rb_dns_server/db_conf.php` and set the username and the password.
@@ -33,7 +33,7 @@ Now you can run the client on you iot devices to register a device.
 # TODO
 
 ## SERVER TODO
-* add uuid generator
+* add nickname support
 
 ## CLIENT TODO
 * add go client
