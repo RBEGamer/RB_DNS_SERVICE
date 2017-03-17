@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS `ip_lookup` (
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `creation_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `params` text NOT NULL,
+  `localip` text NOT NULL,
   `ignore` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
