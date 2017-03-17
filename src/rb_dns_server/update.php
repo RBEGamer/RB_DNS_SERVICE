@@ -56,7 +56,7 @@ $row_counter++;
 
 //if == 1 update
 if($row_counter == 0){
-$update_data = mysql_query("INSERT INTO `ip_lookup` (`id`, `uuid`, `dest_ip_v4`, `dest_ip_port`, `device_type`, `device_name`, `device_pw`, `last_update`, `creation_date`, `params`) VALUES (NULL, '".$_GET['uuid']."', '".$client_ip."', '".$_GET['port']."', '".$_GET['type']."', '".$_GET['device_name']."', '".$_GET['pass']."', CURRENT_TIMESTAMP, '0000-00-00 00:00:00.000000', '".$_GET['tl']."');");
+$update_data = mysql_query("INSERT INTO `ip_lookup` (`id`, `uuid`, `dest_ip_v4`, `dest_ip_port`, `device_type`, `device_name`, `device_pw`, `last_update`, `creation_date`, `params`, `localip`) VALUES (NULL, '".$_GET['uuid']."', '".$client_ip."', '".$_GET['port']."', '".$_GET['type']."', '".$_GET['device_name']."', '".$_GET['pass']."', CURRENT_TIMESTAMP, '0000-00-00 00:00:00.000000', '".$_GET['tl']."', '".$_GET['localip']."');");
 $insert_log = mysql_query("INSERT INTO `log` (`id`, `message`, `ip`, `time`) VALUES (NULL, 'register device ip', '" .$client_ip ."', CURRENT_TIMESTAMP);");
 echo "insert_ok";
 //insert
@@ -66,7 +66,7 @@ echo "insert_ok";
 $pw_check = mysql_query("SELECT* FROM `ip_lookup` WHERE `device_pw`='".$_GET['pass']."' AND `uuid`='".$_GET['uuid']."' AND `ip` != '".$client_ip."'");
 
 if(mysql_fetch_array($pw_check) != false){
-$insert_data = mysql_query("UPDATE `ip_lookup` SET `dest_ip_v4`='".$client_ip."',`dest_ip_port`='".$_GET['port']."',`device_name`='".$_GET['device_name']."',`device_pw`='".$_GET['pass']."' WHERE `uuid`='".$_GET['uuid']."' AND `device_pw`='".$_GET['pass']."'");
+$insert_data = mysql_query("UPDATE `ip_lookup` SET `dest_ip_v4`='".$client_ip."',`dest_ip_port`='".$_GET['port']."',`device_name`='".$_GET['device_name']."',`device_pw`='".$_GET['pass']."', `localip`='".$_GET['localip']."' WHERE `uuid`='".$_GET['uuid']."' AND `device_pw`='".$_GET['pass']."'");
 $update_log = mysql_query("INSERT INTO `log` (`id`, `message`, `ip`, `time`) VALUES (NULL, 'update device ip', '".$client_ip."', CURRENT_TIMESTAMP);");
 echo "update_ok";
 }else{
