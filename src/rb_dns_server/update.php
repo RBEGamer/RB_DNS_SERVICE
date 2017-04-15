@@ -63,9 +63,9 @@ echo "insert_ok";
 }else if($row_counter == 1){
 
 //CHECK PW
-$pw_check = mysql_query("SELECT* FROM `ip_lookup` WHERE `device_pw`='".$_GET['pass']."' AND `uuid`='".$_GET['uuid']."' AND `ip` != '".$client_ip."'");
+$pw_check = mysql_query("SELECT* FROM `ip_lookup` WHERE `device_pw`='".$_GET['pass']."' AND `uuid`='".$_GET['uuid']."'");
 
-if(mysql_fetch_array($pw_check) != false){
+if(mysql_fetch_array($pw_check) == true){
 $insert_data = mysql_query("UPDATE `ip_lookup` SET `dest_ip_v4`='".$client_ip."',`dest_ip_port`='".$_GET['port']."',`device_name`='".$_GET['device_name']."',`device_pw`='".$_GET['pass']."', `localip`='".$_GET['localip']."' WHERE `uuid`='".$_GET['uuid']."' AND `device_pw`='".$_GET['pass']."'");
 $update_log = mysql_query("INSERT INTO `log` (`id`, `message`, `ip`, `time`) VALUES (NULL, 'update device ip', '".$client_ip."', CURRENT_TIMESTAMP);");
 echo "update_ok";
