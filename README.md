@@ -39,7 +39,7 @@ Now you can run the client on you iot devices to register a device.
 * add register vars
 
 ## CLIENT TODO
-* add go client
+
 * add arduino esp client
-* add cpp client class
-* add swift client class
+* add cpp client
+
